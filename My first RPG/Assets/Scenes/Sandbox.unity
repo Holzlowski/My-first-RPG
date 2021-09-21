@@ -10176,53 +10176,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7159525151646029851, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_Speed
-      value: 5.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159525151646029851, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_Height
-      value: 1.82
-      objectReference: {fileID: 0}
-    - target: {fileID: 7159525151646029851, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_BaseOffset
-      value: -0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6608295245817785643, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6d4766cf915da4faa31798bb98a5c3, type: 3}
---- !u!1 &7159525151646029850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8181358852724005785, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-    type: 3}
-  m_PrefabInstance: {fileID: 7159525151646029849}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &7159525151646029851
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7159525151646029850}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
-  m_Controller: {fileID: 9100000, guid: cbea7d42f87c3cf4dbd2b57de38ed35f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &7159525151646029856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 506661537315342837, guid: 4c6d4766cf915da4faa31798bb98a5c3,
