@@ -40,6 +40,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 5
+  waypointDwellTime: 4
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
 --- !u!1001 &2097091663466332832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47,6 +50,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8181358852724005785, guid: 4c6d4766cf915da4faa31798bb98a5c3,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 506661537315342837, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -102,11 +110,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8181358852724005785, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 6203158548926873398, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
       propertyPath: m_Radius
@@ -120,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 208361231931412427, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6d4766cf915da4faa31798bb98a5c3, type: 3}
