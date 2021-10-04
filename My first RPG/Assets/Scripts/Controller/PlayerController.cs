@@ -1,4 +1,5 @@
 ﻿using RPG.Combat;
+using RPG.Core;
 using RPG.Movement;
 using System;
 using System.Collections;
@@ -9,9 +10,17 @@ namespace RPG.Control
 {
     public class PlayerController : MonoBehaviour
     {
+        Health health;
+
+        private void Start()
+        {
+            health = GetComponent<Health>();
+        }
 
         private void Update()
         {
+            if (health.IsDead()) return;
+
             if(InteractWithCombat()) return;
             if(InteracWithMovement()) return;
             //.drawray(lastray.origin, lastray.direction * 100, color.yellow);
@@ -30,7 +39,7 @@ namespace RPG.Control
                     continue;
                 }
 
-                if (Input.GetMouseButtonDown(0))
+                if (Input.GetMouseButton(0))
                 {
                     GetComponent<Fighter>().Attack(target.gameObject);
                 }

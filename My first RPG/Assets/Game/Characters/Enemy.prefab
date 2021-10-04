@@ -39,6 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chaseDistance: 5
+  suspicionTime: 5
 --- !u!1001 &2097091663466332832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46,11 +47,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8181358852724005785, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
     - target: {fileID: 506661537315342837, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -105,6 +101,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8181358852724005785, guid: 4c6d4766cf915da4faa31798bb98a5c3,
+        type: 3}
+      propertyPath: m_Name
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6203158548926873398, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
