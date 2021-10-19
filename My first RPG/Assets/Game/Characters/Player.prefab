@@ -42,6 +42,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0c142e5d836794ab171543dbf7ca67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5099258482720455372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060446104139593483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d1df6af35e98a84691d5b453a1c363d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experiencePoints: 0
 --- !u!1001 &3477125440695966923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -202,6 +215,11 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.29
       objectReference: {fileID: 0}
+    - target: {fileID: 6051249086748767969, guid: 4c6d4766cf915da4faa31798bb98a5c3,
+        type: 3}
+      propertyPath: characterClass
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4689598786441590994, guid: 4c6d4766cf915da4faa31798bb98a5c3,
         type: 3}
       propertyPath: weaponPrefab
@@ -233,11 +251,6 @@ PrefabInstance:
         type: 3}
       propertyPath: uniqueIdentifier
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6051249086748767969, guid: 4c6d4766cf915da4faa31798bb98a5c3,
-        type: 3}
-      propertyPath: characterClass
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c6d4766cf915da4faa31798bb98a5c3, type: 3}

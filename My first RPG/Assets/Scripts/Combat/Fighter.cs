@@ -55,6 +55,11 @@ namespace RPG.Combat
             weapon.Spawn(rightHandTransform,leftHandTransform, animator);
         }
 
+        public Health GetTarget()
+        {
+            return target;
+        }
+
         private void AttackBehavior()
         {
             transform.LookAt(target.transform);
@@ -79,11 +84,11 @@ namespace RPG.Combat
 
             if (currentWeapon.HasProjectile())
             {
-                currentWeapon.LaunchProjektile(rightHandTransform, leftHandTransform, target);
+                currentWeapon.LaunchProjektile(rightHandTransform, leftHandTransform, target, gameObject);
             }
             else
             {
-                target.TakeDamage(currentWeapon.GetDamage());
+                target.TakeDamage(gameObject, currentWeapon.GetDamage());
             }
         }
 
