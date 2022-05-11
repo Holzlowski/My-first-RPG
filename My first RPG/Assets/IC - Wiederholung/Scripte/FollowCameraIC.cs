@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FollowCameraIC : MonoBehaviour
+namespace IC.Core
 {
-    [SerializeField] Transform target;
-
-
-    // Update is called once per frame
-    void Update()
+    public class FollowCameraIC : MonoBehaviour
     {
-        transform.position = target.position;
+        [SerializeField] Transform target;
+
+
+        // Update is called once per frame
+        void LateUpdate()
+        {
+            transform.position = target.position;
+        }
     }
 }

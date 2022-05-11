@@ -3,33 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MoverIC : MonoBehaviour
+namespace IC.Movement
 {
-    [SerializeField] Transform target;
-    Ray lastRay;
-    
-    void Start()
+    public class MoverIC : MonoBehaviour
     {
-        
-    }
+        [SerializeField] Transform target;
+        Ray lastRay;
 
-    void Update()
-    {
-        if(Input.GetMouseButtonDown(0))
+        void Update()
         {
-            MoveToCursor();
+            UpdateAnimator();
         }
-    }
 
-    private void MoveToCursor()
-    {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        bool hasHit = Physics.Raycast(ray, out hit);
-
-        if(hasHit)
+        public void MoveTo(Vector3 destination)
         {
-            GetComponent<NavMeshAgent>().destination = hit.point;
+            GetComponent<NavMeshAgent>().destination = destination;
         }
+
+        private void UpdateAnimator()
+        {
+            Vector3 velocity = GetComponent<NavMeshAgent>().velocity;
+            Vector3 localVelocity = transform.InverseTransformDirection(velocity);
+            float speed = localVelocity.z;
+            GetComponent<Animator>().SetFloat("forwardSpeed", speed);
+        }
+
     }
 }
