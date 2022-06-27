@@ -11,14 +11,18 @@ namespace IC.Movement
         [SerializeField] Transform target;
 
         NavMeshAgent navMeshAgent;
+        HealthIC health;
 
         private void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            health = GetComponent<HealthIC>();
         }
 
         void Update()
         {
+            navMeshAgent.enabled = !health.IsDead();
+
             UpdateAnimator();
         }
 

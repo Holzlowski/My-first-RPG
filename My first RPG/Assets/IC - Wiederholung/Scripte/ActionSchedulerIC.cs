@@ -16,6 +16,11 @@ namespace IC.Core
             }
 ;            currentAction = action;
         }
+
+        public void CancelCurrentAction()
+        {
+            StartAction(null);
+        }
     }
 }
 

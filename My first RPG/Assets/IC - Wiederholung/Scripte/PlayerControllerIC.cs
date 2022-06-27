@@ -1,5 +1,6 @@
 using System;
 using IC.Combat;
+using IC.Core;
 using IC.Movement;
 using UnityEngine;
 
@@ -7,9 +8,17 @@ namespace IC.Control
 {
     public class PlayerControllerIC : MonoBehaviour
     {
+        HealthIC health;
+
+        void Start()
+        {
+            health = GetComponent<HealthIC>();
+        }
 
         private void Update()
         {
+           if(health.IsDead()) return;
+
            if(InteractWithCombat()) return;
            if(InteractWithMovement()) return;
            print("Nothing to do.");
@@ -21,11 +30,14 @@ namespace IC.Control
             foreach(RaycastHit hit in hits)
             {
                 CombatTargetIC target = hit.transform.GetComponent<CombatTargetIC>();
-                if(target == null) continue;
 
-                if(Input.GetMouseButtonDown(0))
+                if (target == null) continue; 
+
+                if(!GetComponent<FighterIC>().CanAttack(target.gameObject)) continue;
+
+                if(Input.GetMouseButton(0))
                 {
-                    GetComponent<FighterIC>().Attack(target);
+                    GetComponent<FighterIC>().Attack(target.gameObject);
                 }
                 return true;
             }
