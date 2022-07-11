@@ -30,6 +30,7 @@ MonoBehaviour:
   suspicionTime: 3
   patrolPath: {fileID: 0}
   waypointTolerance: 1
+  waypointDwellTime: 3
 --- !u!114 &4595244479268435306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931d236e3bf8356419cfd2d722d1f0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healtPoints: 15
+  healtPoints: 40
 --- !u!1001 &3095320024821115284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,10 +180,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6761867436519265017, guid: a35d6fdb614dda94bba6a10700d2d672,
         type: 3}
       propertyPath: m_Speed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35d6fdb614dda94bba6a10700d2d672, type: 3}

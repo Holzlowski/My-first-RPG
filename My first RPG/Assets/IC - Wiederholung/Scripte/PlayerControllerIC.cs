@@ -53,7 +53,7 @@ namespace IC.Control
             {
                 if (Input.GetMouseButton(0))
                 {
-                    GetComponent<MoverIC>().StartMoveAction(hit.point);
+                    GetComponent<MoverIC>().StartMoveAction(hit.point, 1f);
                 }
                 return true;
             }

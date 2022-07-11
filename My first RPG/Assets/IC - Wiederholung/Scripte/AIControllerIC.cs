@@ -15,6 +15,8 @@ namespace IC.Control
         [SerializeField] PatrolPathIC patrolPath;
         [SerializeField] float waypointTolerance = 1f;
         [SerializeField] float waypointDwellTime = 3f;
+        [Range(0f, 1f)]
+        [SerializeField] float patrolSpeedFraction = 0.2f;
 
         FighterIC fighter;
         HealthIC health;
@@ -79,7 +81,7 @@ namespace IC.Control
 
             if(timeSinceArrivedAtWaypoint > waypointDwellTime)
             {
-                mover.StartMoveAction(nextPosition);
+                mover.StartMoveAction(nextPosition, patrolSpeedFraction);
             }
         }
 

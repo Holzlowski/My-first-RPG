@@ -26,6 +26,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 876f5784efada744ea4e830678e2f262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7695291859056009068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3028510820021829768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 931d236e3bf8356419cfd2d722d1f0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healtPoints: 100
 --- !u!1001 &301712729051809477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -97,6 +110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: weaponDamage
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35d6fdb614dda94bba6a10700d2d672, type: 3}

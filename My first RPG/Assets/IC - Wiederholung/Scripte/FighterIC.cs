@@ -22,7 +22,7 @@ namespace IC.Combat
 
             if (!GetIsInrange())
             {
-                GetComponent<MoverIC>().MoveTo(target.transform.position);
+                GetComponent<MoverIC>().MoveTo(target.transform.position, 1f);
             }
             else
             {
@@ -65,6 +65,7 @@ namespace IC.Combat
         {
             StopAttack();
             target = null;
+            GetComponent<MoverIC>().Cancel();
         }
 
         private void StopAttack()
