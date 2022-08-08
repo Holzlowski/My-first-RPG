@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SecondStage.unity
     guid: 1b3190818753c6743aea0127627af6be
+  - enabled: 1
+    path: Assets/IC - Wiederholung/Level/IC.unity
+    guid: f4ce9887c605fb1418c3a7735799cec5
+  - enabled: 1
+    path: Assets/IC - Wiederholung/Level/IC Second scene.unity
+    guid: de82c95ae76601745bc9529c49f13e15
   m_configObjects: {}
