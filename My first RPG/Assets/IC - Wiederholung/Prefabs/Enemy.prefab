@@ -31,6 +31,7 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 3
+  patrolSpeedFraction: 0.2
 --- !u!114 &4595244479268435306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,19 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036a13c3d6c408046803510c5fd5eb90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5803796674827229209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174514052349701883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 931d236e3bf8356419cfd2d722d1f0e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healtPoints: 40
 --- !u!1001 &3095320024821115284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,15 +168,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6761867436519265017, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: m_Speed
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
         type: 3}
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 6761867436519265017, guid: a35d6fdb614dda94bba6a10700d2d672,
+    - target: {fileID: 2583547291405837646, guid: a35d6fdb614dda94bba6a10700d2d672,
         type: 3}
-      propertyPath: m_Speed
-      value: 3
+      propertyPath: healtPoints
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35d6fdb614dda94bba6a10700d2d672, type: 3}

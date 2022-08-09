@@ -43,10 +43,18 @@ namespace IC.Scenemanagement
             FaderIC fader = FindObjectOfType<FaderIC>();
 
             yield return fader.FadeOut(fadeOutTime);
+
+            SavingWrapperIC wrapper = FindObjectOfType<SavingWrapperIC>();
+            wrapper.Save();
+
             yield return SceneManager.LoadSceneAsync(sceneToLoad);
+
+            wrapper.Load();
 
             PortalIC otherPortal = GetOtherPortal();
             UpdatePlayer(otherPortal);
+
+            wrapper.Save();
 
             yield return new WaitForSeconds(fadeWaitTime);
             yield return fader.FadeIn(fadeInTime);
