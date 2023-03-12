@@ -13,7 +13,7 @@ namespace RPG.Attributes
 
         private void Start()
         {
-            healthPoints = GetComponent<BaseStats>().GetHealth();
+            healthPoints = GetComponent<BaseStats>().GetStat(Stat.Health);
         }
 
         public bool IsDead()
@@ -31,17 +31,10 @@ namespace RPG.Attributes
             }
         }
 
-        private void AwardExperience(GameObject instigator)
-        {
-            Experience experience = instigator.GetComponent<Experience>();
-            if (experience == null) return;
-
-            experience.GainExperience(GetComponent<BaseStats>().GetExperienceReward());
-        }
 
         public float GetPercentage()
         {
-            return 100 * healthPoints / GetComponent<BaseStats>().GetHealth();
+            return 100 * (healthPoints / GetComponent<BaseStats>().GetStat(Stat.Health));
         }
 
         private void Die()
@@ -67,6 +60,14 @@ namespace RPG.Attributes
             {
                 Die();
             }
+        }
+
+        private void AwardExperience(GameObject instigator)
+        {
+            Experience experience = instigator.GetComponent<Experience>();
+            if (experience == null) return;
+
+            experience.GainExperience(GetComponent<BaseStats>().GetStat(Stat.ExperienceReward));
         }
     }
 }
