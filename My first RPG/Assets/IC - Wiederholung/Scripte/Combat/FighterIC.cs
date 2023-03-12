@@ -1,24 +1,37 @@
 using UnityEngine;
 using IC.Movement;
 using IC.Core;
+using System;
+using RPG.Saving;
 
 namespace IC.Combat
 {
-    public class FighterIC : MonoBehaviour, ICAction
+    public class FighterIC : MonoBehaviour, ICAction, ISaveable
     {
-        [SerializeField] float weaponRange = 2f;
-        [SerializeField] float weaponDamage = 5f;
         [SerializeField] float timeBetweenAttacks = 1f;
-        
+        [SerializeField] Transform rightHandTransform = null;
+        [SerializeField] Transform leftHandTransform = null;
+        [SerializeField] WeaponIC defaultWeapon = null;
+        [SerializeField] string defaultWeaponName = "Unarmed";
+
         HealthIC target;
         float timeSinceLastAttack = Mathf.Infinity;
+        WeaponIC currentWeapon = null;
+
+        private void Start()
+        {
+            if (currentWeapon == null)
+            {
+                EquipWeapon(defaultWeapon);
+            }
+        }
 
         private void Update()
         {
             timeSinceLastAttack += Time.deltaTime;
 
             if (target == null) return;
-            if(target.IsDead()) return; 
+            if (target.IsDead()) return;
 
             if (!GetIsInrange())
             {
@@ -30,11 +43,18 @@ namespace IC.Combat
                 AttackBehaviour();
             }
         }
+        
+        public void EquipWeapon(WeaponIC weapon)
+        {
+            currentWeapon = weapon;
+            Animator animator = GetComponent<Animator>();
+            weapon.Spawn(rightHandTransform, leftHandTransform, animator);
+        }
 
         private void AttackBehaviour()
         {
             transform.LookAt(target.transform);
-            if(timeSinceLastAttack > timeBetweenAttacks)
+            if (timeSinceLastAttack > timeBetweenAttacks)
             {
                 // This will trigger the hit event
                 TriggerAttack();
@@ -77,14 +97,40 @@ namespace IC.Combat
 
         private bool GetIsInrange()
         {
-            return Vector3.Distance(transform.position, target.transform.position) < weaponRange;
+            return Vector3.Distance(transform.position, target.transform.position) < currentWeapon.GetRange();
         }
 
         // Animation Event
         void Hit()
         {
             if (target == null) return;
-            target.TakeDamage(weaponDamage);
+
+            if(currentWeapon.HasProjectole())
+            {
+                currentWeapon.LaunchProjectile(rightHandTransform, leftHandTransform, target);
+            }
+            else
+            {
+                target.TakeDamage(currentWeapon.GetDamage());
+            }
         }
+
+        void Shoot()
+        {
+            Hit();
+        }
+
+        public object CaptureState()
+        {
+            return currentWeapon.name;
+        }
+
+        public void RestoreState(object state)
+        {
+            string weaponName = (string)state;
+            WeaponIC weapon = Resources.Load<WeaponIC>(weaponName);
+            EquipWeapon(weapon);
+        }
+
     }
 }

@@ -98,15 +98,59 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4495174013314455644, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: uniqueIdentifier
+      value: player
+      objectReference: {fileID: 0}
     - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
         type: 3}
       propertyPath: weaponDamage
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 4495174013314455644, guid: a35d6fdb614dda94bba6a10700d2d672,
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
         type: 3}
-      propertyPath: uniqueIdentifier
-      value: player
+      propertyPath: weaponPrefab
+      value: 
+      objectReference: {fileID: 5153911494522396088, guid: a73853b585718ab48b7d305f9fce1190,
+        type: 3}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: handTransform
+      value: 
+      objectReference: {fileID: 7454503657538163040}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: weaponOverride
+      value: 
+      objectReference: {fileID: 22100000, guid: 99687af0b5735874cb740323aa18cd8b,
+        type: 2}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: weapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 9c4332e44053ba34f823ab385346efba,
+        type: 2}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 11400000, guid: 93171d1e2cf8c664b91db2e4c245799a,
+        type: 2}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: leftHandTransform
+      value: 
+      objectReference: {fileID: 7454503657538105698}
+    - target: {fileID: 6143917161448552330, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: rightHandTransform
+      value: 
+      objectReference: {fileID: 7454503657538163040}
+    - target: {fileID: 7884228453580773560, guid: a35d6fdb614dda94bba6a10700d2d672,
+        type: 3}
+      propertyPath: characterClass
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a35d6fdb614dda94bba6a10700d2d672, type: 3}
@@ -207,3 +251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30cf93deff988e74e88a144bd2127c18, type: 3}
+--- !u!4 &7454503657538105698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 481036, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 7454503657538578030}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7454503657538163040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 423694, guid: 30cf93deff988e74e88a144bd2127c18,
+    type: 3}
+  m_PrefabInstance: {fileID: 7454503657538578030}
+  m_PrefabAsset: {fileID: 0}

@@ -12,7 +12,6 @@ namespace RPG.Combat
         [SerializeField] Transform rightHandTransform = null;
         [SerializeField] Transform leftHandTransform = null;
         [SerializeField] Weapon defaultWeapon = null;
-        [SerializeField] string defaultWeaponName = "Unarmed";
 
         float timeSinceLastAttack = Mathf.Infinity;
         Weapon currentWeapon = null;
@@ -119,7 +118,7 @@ namespace RPG.Combat
         {
             StoppAttack();
             target = null;
-            GetComponent<Mover>().Cancel();
+            mover.Cancel();
         }
 
         private void StoppAttack()
