@@ -9,9 +9,13 @@ namespace RPG.Attributes
     {
         [SerializeField] float experiencePoints = 0;
 
+        //public delegate void ExperienceGainedDelegate();
+        public Action onExperiencedGained;
+
         public void GainExperience(float experience)
         {
             experiencePoints += experience;
+            onExperiencedGained();
         }
 
         internal float GetPoints()

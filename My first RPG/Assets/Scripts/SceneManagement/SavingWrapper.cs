@@ -8,17 +8,22 @@ namespace RPG.SceneManagement
 {
     public class SavingWrapper : MonoBehaviour
     {
-        //const string defaultSafeFile = "save";
-        const string defaultSafeFile = null;
+        const string defaultSafeFile = "save";
+        //const string defaultSafeFile = null;
 
         [SerializeField] float fadeInTime = 0.2f;
 
-        IEnumerator Start()
+        private void Awake()
         {
-            Fader fader = FindObjectOfType<Fader>();
-            fader.FadeOutImmediate();
-           yield return GetComponent<SavingSystem>().LoadLastScene(defaultSafeFile);
-            yield return fader.FadeIn(fadeInTime);
+            StartCoroutine(LoadLastScene());
+        }
+
+        IEnumerator LoadLastScene()
+        {
+            yield return GetComponent<SavingSystem>().LoadLastScene(defaultSafeFile); // Get what the last loaded scene was.
+            Fader fader = FindObjectOfType<Fader>(); // Link fader to the Fader script.
+            fader.FadeOutImmediate(); // Perform an immediate fade out.
+            yield return fader.FadeIn(fadeInTime); // Fade back in.
         }
 
         void Update()
@@ -30,6 +35,10 @@ namespace RPG.SceneManagement
             if (Input.GetKeyDown(KeyCode.S))
             {
                 Save();
+            }
+            if (Input.GetKeyDown(KeyCode.Delete))
+            {
+                Delete();
             }
         }
 
@@ -47,6 +56,11 @@ namespace RPG.SceneManagement
             {
                 GetComponent<SavingSystem>().Load(defaultSafeFile);
             }             
+        }
+
+        public void Delete()
+        {
+            GetComponent<SavingSystem>().Delete(defaultSafeFile);
         }
     }
 }
