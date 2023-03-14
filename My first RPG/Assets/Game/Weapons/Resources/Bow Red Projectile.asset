@@ -16,7 +16,8 @@ MonoBehaviour:
   equippedPrefab: {fileID: 8352174285993605220, guid: 95d238e819a601f4c98855760e6d6a8f,
     type: 3}
   weaponRange: 15
-  weaponDamage: 20
+  weaponDamage: 15
+  percentageBonus: 5
   projectile: {fileID: 3092505371021025010, guid: 857c6369fc9404643bad7368bc874f96,
     type: 3}
   isRightHanded: 0
