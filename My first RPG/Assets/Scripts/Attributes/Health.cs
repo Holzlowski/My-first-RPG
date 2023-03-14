@@ -95,7 +95,7 @@ namespace RPG.Attributes
 
         object ISaveable.CaptureState()
         {
-            return healthPoints;
+            return healthPoints.value;
         }
 
         void ISaveable.RestoreState(object state)

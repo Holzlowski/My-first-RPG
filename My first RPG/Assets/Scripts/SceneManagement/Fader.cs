@@ -8,9 +8,13 @@ namespace RPG.SceneManagement
     {
         CanvasGroup canvasGroup;
 
-        private void Start()
+        private void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
+        }
+
+        private void Start()
+        {
             canvasGroup.alpha = 0;
         }
 

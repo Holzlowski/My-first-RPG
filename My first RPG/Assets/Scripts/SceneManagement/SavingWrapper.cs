@@ -13,15 +13,17 @@ namespace RPG.SceneManagement
 
         [SerializeField] float fadeInTime = 0.2f;
 
-        private void Awake()
+        Fader fader;
+
+        private void Start()
         {
+            fader = FindObjectOfType<Fader>(); // Link fader to the Fader script.
             StartCoroutine(LoadLastScene());
         }
 
         IEnumerator LoadLastScene()
         {
             yield return GetComponent<SavingSystem>().LoadLastScene(defaultSafeFile); // Get what the last loaded scene was.
-            Fader fader = FindObjectOfType<Fader>(); // Link fader to the Fader script.
             fader.FadeOutImmediate(); // Perform an immediate fade out.
             yield return fader.FadeIn(fadeInTime); // Fade back in.
         }
