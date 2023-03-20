@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7845618630976219199}
   - component: {fileID: 4049414454230092010}
   m_Layer: 0
-  m_Name: Pickup
+  m_Name: Root Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,7 +44,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.51
-  m_Center: {x: 0, y: 0.12, z: -0.64}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4049414454230092010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +58,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
+  healthToRestore: 0
+  respawnTime: 5

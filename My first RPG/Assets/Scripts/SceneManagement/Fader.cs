@@ -7,47 +7,44 @@ namespace RPG.SceneManagement
     public class Fader : MonoBehaviour
     {
         CanvasGroup canvasGroup;
+        Coroutine currentActiveFade = null;
 
         private void Awake()
         {
             canvasGroup = GetComponent<CanvasGroup>();
         }
 
-        private void Start()
-        {
-            canvasGroup.alpha = 0;
-        }
-
         public void FadeOutImmediate()
         {
-            if(canvasGroup != null)
+            canvasGroup.alpha = 1.0f;
+        }
+
+        public Coroutine FadeOut(float time)
+        {
+            return Fade(1, time);
+        }
+
+        public Coroutine FadeIn(float time)
+        {
+            return Fade(0, time);
+        }
+
+        public Coroutine Fade(float target, float time)
+        {
+            if (currentActiveFade != null)
             {
-                canvasGroup.alpha = 1;
+                StopCoroutine(currentActiveFade);
             }
+            currentActiveFade = StartCoroutine(FadeRoutine(target, time));
+            return currentActiveFade;
         }
 
-        IEnumerator FadeOutIn()
+        // senkt oder erhöht Alphawert des Canvas
+        private IEnumerator FadeRoutine(float target, float time)
         {
-            yield return FadeOut(3f);
-            print("Faded out");
-            yield return FadeIn(1f);
-            print("Faded In");
-        }
-
-        public IEnumerator FadeOut(float time)
-        {
-            while(canvasGroup.alpha < 1)
+            while (!Mathf.Approximately(canvasGroup.alpha, target))
             {
-                canvasGroup.alpha += Time.deltaTime / time;
-                yield return null;
-            }
-        }
-
-        public IEnumerator FadeIn(float time)
-        {
-            while (canvasGroup.alpha > 0)
-            {
-                canvasGroup.alpha -= Time.deltaTime / time;
+                canvasGroup.alpha = Mathf.MoveTowards(canvasGroup.alpha, target, Time.deltaTime / time);
                 yield return null;
             }
         }

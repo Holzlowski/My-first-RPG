@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 using IC.SceneManagement;
+using RPG.Control;
 
 namespace IC.Scenemanagement
 {

@@ -7,15 +7,13 @@ namespace RPG.UI.DamageText
     public class DamageTextSpawner : MonoBehaviour
     {
         [SerializeField] DamageText damageTextPrefab = null;
+        //[SerializeField] Transform parent;
 
-        void Start()
-        {
-         
-        }
 
         public void Spawn(float damageAmount)
         {  
-           DamageText instance = Instantiate<DamageText>(damageTextPrefab, transform.parent);
+           DamageText instance = Instantiate<DamageText>(damageTextPrefab, gameObject.transform);
+           instance.SetValue(damageAmount);
         }
     }
 
