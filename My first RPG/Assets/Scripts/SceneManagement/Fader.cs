@@ -19,6 +19,16 @@ namespace RPG.SceneManagement
             canvasGroup.alpha = 1.0f;
         }
 
+         public Coroutine Fade(float target, float time)
+        {
+            if (currentActiveFade != null)
+            {
+                StopCoroutine(currentActiveFade);
+            }
+            currentActiveFade = StartCoroutine(FadeRoutine(target, time));
+            return currentActiveFade;
+        }
+
         public Coroutine FadeOut(float time)
         {
             return Fade(1, time);
@@ -27,16 +37,6 @@ namespace RPG.SceneManagement
         public Coroutine FadeIn(float time)
         {
             return Fade(0, time);
-        }
-
-        public Coroutine Fade(float target, float time)
-        {
-            if (currentActiveFade != null)
-            {
-                StopCoroutine(currentActiveFade);
-            }
-            currentActiveFade = StartCoroutine(FadeRoutine(target, time));
-            return currentActiveFade;
         }
 
         // senkt oder erhöht Alphawert des Canvas
