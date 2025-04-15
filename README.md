@@ -1,5 +1,5 @@
 # My-first-RPG
-This is a small action RPG developed in Unity, loosely inspired by games like *Diablo*. The player controls their character via mouse clicks to interact with the game world – such as moving around or attacking enemies.
+This is a small action RPG developed in Unity, loosely inspired by games like *Diablo*. The player controls their character via mouse clicks to interact with the game world, such as moving around or attacking enemies.
 
 ## 🎮 Features
 
